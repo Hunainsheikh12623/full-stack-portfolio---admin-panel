@@ -33,10 +33,15 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ authToken, onLog
       const res = await fetch('/api/admin/data', {
         headers: { Authorization: `Bearer ${authToken}` }
       });
-      if (res.ok) {
-        const json = await res.json();
-        setData(json);
+      if (!res.ok) {
+        if (res.status === 401) {
+          onLogout();
+          return;
+        }
+        throw new Error('Unable to load admin data.');
       }
+      const json = await res.json();
+      setData(json);
     } catch (err) {
       console.error('Error fetching admin data:', err);
     } finally {

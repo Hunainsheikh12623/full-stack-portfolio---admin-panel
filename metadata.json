@@ -1,0 +1,6 @@
+{
+  "name": "Full Stack Portfolio & Admin Panel",
+  "description": "Professional engineer's portfolio featuring 'The Ledger' design concept with full CRUD admin panel for projects, blog, experience, skills, testimonials, and contact inbox.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

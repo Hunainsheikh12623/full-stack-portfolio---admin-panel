@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ink: #e0e0e0;
+    --paper: #050505;
+    --card-bg: #080808;
+    --panel-bg: #0a0a0a;
+    --graphite: #a0a0a0;
+    --line: rgba(255, 255, 255, 0.1);
+    --signal: #ffffff;
+    --emerald-accent: #22c55e;
+  }
+
+  body {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    background-color: #050505;
+    color: #e0e0e0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono, .mono-xs, .mono-sm {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.mono-xs {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.mono-sm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Custom scrollbar for markdown and code blocks */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Glass & Ledger utilities */
+.ledger-border {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.ledger-border-dark {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+

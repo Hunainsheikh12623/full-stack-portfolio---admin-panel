@@ -1,15 +1,15 @@
 {
   "profile": {
-    "name": "Alex Vance",
-    "title": "Senior Systems & Full-Stack Engineer",
-    "tagline": "Designing high-throughput distributed systems, modern web platforms, and fault-tolerant cloud architectures.",
-    "bio": "With over 8 years of engineering experience, I specialize in building mission-critical backend microservices, real-time web applications, and developer platforms. I turn complex architectural challenges into clean, maintainable systems that scale seamlessly.",
-    "photoUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800",
+    "name": "Hunain Sheikh",
+    "title": "Computer Systems Engineer & Backend Developer",
+    "tagline": "Passionate about building robust backend systems, REST APIs, and modern web software.",
+    "bio": "I am a dedicated Computer Systems Engineering student at MUET Jamshoro. I focus on building practical software solutions, exploring modern backend technologies (Java, Spring Boot, Go), and studying System Design and SaaS development architectures.",
+    "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800",
     "resumeUrl": "/assets/resume.pdf",
-    "email": "alex.vance.dev@gmail.com",
-    "phone": "+1 (555) 382-9102",
-    "location": "San Francisco, CA / Remote",
-    "availabilityStatus": "Open for Lead Roles & Strategic Contracts",
+    "email": "hunainsheikh5656@gmail.com",
+    "phone": "+92 316 8255241",
+    "location": "Sindh, Pakistan / Remote",
+    "availabilityStatus": "Open for Software Engineering Internships & Entry-Level Roles",
     "socialLinks": [
       {
         "platform": "GitHub",
@@ -22,19 +22,14 @@
         "icon": "linkedin"
       },
       {
-        "platform": "X / Twitter",
-        "url": "https://x.com",
-        "icon": "twitter"
-      },
-      {
         "platform": "Email",
-        "url": "mailto:alex.vance.dev@gmail.com",
+        "url": "mailto:hunainsheikh5656@gmail.com",
         "icon": "mail"
       }
     ],
     "seoDefaults": {
-      "title": "Alex Vance | Senior Full-Stack Systems Engineer",
-      "description": "Personal portfolio & systems engineering ledger of Alex Vance. High throughput systems, React, Node.js, and Cloud Infrastructure.",
+      "title": "Hunain Sheikh | Computer Systems Engineer & Backend Developer",
+      "description": "Personal portfolio of Hunain Sheikh. Specialized in Java, Go, Spring Boot, REST APIs, and Full-Stack development.",
       "ogImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200"
     },
     "adminPassword": "admin123"
@@ -42,141 +37,210 @@
   "projects": [
     {
       "id": "proj-1",
-      "title": "Nexus Realtime Log Pipeline",
-      "slug": "nexus-realtime-log-pipeline",
-      "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+      "title": "Student Management System",
+      "slug": "student-management-system",
+      "coverImage": "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=1000",
       "gallery": [
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
-        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000"
+        "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=1000"
       ],
-      "summary": "High-throughput log ingestion system processing 100k+ events/sec with real-time stream aggregation.",
-      "description": "## Architectural Overview\nNexus is a fault-tolerant log streaming pipeline engineered to process millions of log events with sub-50ms query latency.\n\n### Key Technical Highlights\n- Built on an event-driven Go ingestion engine with zero-allocation JSON parsing.\n- Multi-tier caching strategy using Redis for hot queries and ClickHouse for historical analytics.\n- Live WebSocket dashboard for real-time traffic monitoring and alert routing.\n\n### Impact\nReduced infrastructure costs by **38%** while improving query throughput across 12 distributed clusters.",
-      "category": "Backend Systems",
+      "summary": "A desktop student records manager built using Java and Maven, with local Excel storage.",
+      "description": "## Architectural Overview\nThe Student Management System is designed to showcase clean code principles using a layered architecture.\n\n### Key Features\n- **Layered Architecture**: Designed using the Repository pattern to decouple data access from business logic.\n- **Excel Integration**: Leveraged Apache POI to parse and write student records directly to Excel worksheets.\n- **CRUD Functionality**: Fully implemented operations to create, read, update, and delete student data.\n- **OOP Principles**: Applied core object-oriented concepts like encapsulation, inheritance, and polymorphism.",
+      "category": "Desktop / Backend",
       "tags": [
-        "Distributed Systems",
-        "Go",
-        "Kafka",
-        "ClickHouse",
-        "React"
+        "Java",
+        "Maven",
+        "Apache POI",
+        "OOP"
       ],
       "techStack": [
-        "Go",
-        "Kafka",
-        "ClickHouse",
-        "TypeScript",
-        "TailwindCSS",
-        "Docker"
+        "Java",
+        "Maven",
+        "Apache POI",
+        "OOP"
       ],
-      "role": "Lead Architect & Core Engineer",
+      "role": "Core Developer",
       "startDate": "2025-01",
-      "endDate": "2025-06",
-      "client": "Veloce Data Corp",
+      "endDate": "2025-03",
+      "client": "Academic Project",
       "liveUrl": "https://github.com",
       "repoUrl": "https://github.com",
-      "results": "Ingested 10B+ monthly log lines with 99.99% uptime",
+      "results": "Successfully built a local CLI records manager storing data in spreadsheets.",
       "status": "published",
       "featured": true,
       "order": 1,
-      "createdAt": "2025-06-01T00:00:00Z",
-      "updatedAt": "2025-06-01T00:00:00Z"
+      "createdAt": "2025-03-01T00:00:00Z",
+      "updatedAt": "2025-03-01T00:00:00Z"
     },
     {
       "id": "proj-2",
-      "title": "Aura Vector Gateway",
-      "slug": "aura-vector-gateway",
-      "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000",
+      "title": "Portfolio Management System",
+      "slug": "portfolio-management-system",
+      "coverImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000",
       "gallery": [
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=1000"
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000"
       ],
-      "summary": "Distributed middleware proxy for semantic vector search and LLM context caching.",
-      "description": "## Project Summary\nAura serves as an intelligent proxy layer in front of vector databases (Qdrant & Pinecone), caching frequent semantic embedding lookups.\n\n### Key Features\n- Semantic cache layer using HNSW vector indexing.\n- Sub-10ms response times for repeat AI prompts.\n- Comprehensive telemetry dashboard for prompt inspection and rate limiting.",
-      "category": "AI Infrastructure",
+      "summary": "A full-stack portfolio manager driven by a Spring Boot REST API backend.",
+      "description": "## System Design\nThis project showcases a modern full-stack web flow where a client-side interface interacts with a Java-powered REST service.\n\n### Key Features\n- **RESTful Endpoints**: Designed clean, descriptive JSON endpoints for managing portfolio content.\n- **Lightweight DB**: Used H2 in-memory Database for local testing and swift query execution.\n- **API Integration**: Linked the backend REST APIs with a responsive user interface for end-to-end data flow.",
+      "category": "Backend Systems",
       "tags": [
-        "AI Middleware",
-        "TypeScript",
-        "Node.js",
-        "Vector DB",
-        "Redis"
+        "Spring Boot",
+        "Java",
+        "H2 Database",
+        "REST APIs"
       ],
       "techStack": [
-        "Node.js",
-        "TypeScript",
-        "Express",
-        "Qdrant",
-        "Redis",
+        "Spring Boot",
+        "Java",
+        "H2 Database",
+        "REST APIs",
         "React"
       ],
-      "role": "Creator & Maintainer",
-      "startDate": "2024-08",
-      "endDate": "2024-12",
-      "client": "Open Source",
+      "role": "Full-Stack Developer",
+      "startDate": "2025-04",
+      "endDate": "2025-06",
+      "client": "Personal Project",
       "liveUrl": "https://github.com",
       "repoUrl": "https://github.com",
-      "results": "Cut OpenAI API costs by 45% for enterprise beta clients",
+      "results": "Created fully testable REST endpoints facilitating dynamic web portfolio updates.",
       "status": "published",
       "featured": true,
       "order": 2,
-      "createdAt": "2024-12-15T00:00:00Z",
-      "updatedAt": "2024-12-15T00:00:00Z"
+      "createdAt": "2025-06-15T00:00:00Z",
+      "updatedAt": "2025-06-15T00:00:00Z"
+    },
+    {
+      "id": "proj-3",
+      "title": "WhatsApp Order Management System (SaaS Concept)",
+      "slug": "whatsapp-order-management-saas",
+      "coverImage": "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?auto=format&fit=crop&q=80&w=1000",
+      "gallery": [
+        "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?auto=format&fit=crop&q=80&w=1000"
+      ],
+      "summary": "A comprehensive SaaS product design and PRD mapping order flows for micro-businesses.",
+      "description": "## SaaS Concept & Planning\nSmall businesses frequently sell goods directly through chat. This system is designed as a software-as-a-service to organize those orders.\n\n### Project Highlights\n- **Requirement Engineering**: Created detailed Product Requirement Documents (PRDs) detailing user journeys.\n- **Component Planning**: Outlined modules for order management, customer registry, catalog inventory, analytics dashboard, and automated PDF invoice generation.",
+      "category": "Product Design / SaaS",
+      "tags": [
+        "SaaS",
+        "PRD",
+        "System Design",
+        "Product Planning"
+      ],
+      "techStack": [
+        "System Design",
+        "Product Management",
+        "SaaS Architecture"
+      ],
+      "role": "Product Architect",
+      "startDate": "2025-07",
+      "endDate": "2025-08",
+      "client": "SaaS Concept Study",
+      "liveUrl": "https://github.com",
+      "repoUrl": "https://github.com",
+      "results": "Completed developer-ready PRD and comprehensive systems layout.",
+      "status": "published",
+      "featured": true,
+      "order": 3,
+      "createdAt": "2025-08-20T00:00:00Z",
+      "updatedAt": "2025-08-20T00:00:00Z"
+    },
+    {
+      "id": "proj-4",
+      "title": "Personal Portfolio Website",
+      "slug": "personal-portfolio-website",
+      "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",
+      "gallery": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000"
+      ],
+      "summary": "Responsive personal portfolio website showcasing developer skills, projects, and work history.",
+      "description": "## Frontend Engineering\nDeveloped a premium, highly responsive personal website to host resume details, blog entries, and project highlights.\n\n### Key Highlights\n- **Responsive Design**: Designed with a mobile-first approach ensuring layout integrity across all screens.\n- **Modern UX**: Emphasized smooth transitions, readable typography, and polished dark-mode aesthetics.",
+      "category": "Frontend Development",
+      "tags": [
+        "React",
+        "JavaScript",
+        "Tailwind CSS",
+        "CSS"
+      ],
+      "techStack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "role": "Frontend Engineer",
+      "startDate": "2026-07",
+      "endDate": "2026-07",
+      "client": "Personal Project",
+      "liveUrl": "https://github.com",
+      "repoUrl": "https://github.com",
+      "results": "Successfully built and launched a personal developer portfolio.",
+      "status": "published",
+      "featured": true,
+      "order": 4,
+      "createdAt": "2026-07-20T00:00:00Z",
+      "updatedAt": "2026-07-20T00:00:00Z"
     }
   ],
   "blogPosts": [
     {
       "id": "post-1",
-      "title": "Architecting High-Availability Systems: Lessons from 100k EPS",
-      "slug": "architecting-high-availability-systems",
-      "coverImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1000",
-      "excerpt": "A deep dive into distributed consensus, backpressure handling, and graceful degradation during traffic spikes.",
-      "body": "Building systems that handle high throughput requires fundamental shifts in how we manage memory, IO, and network boundaries.\n\n### 1. The Cost of Memory Allocation\nAt 100,000 events per second, even minor object instantiation inside hot loops causes severe Garbage Collection pause times. \n\nIn Go and Node.js, adopting object pooling (`sync.Pool`) reduced overall P99 latency by over **60%**.\n\n### 2. Backpressure and Circuit Breakers\nNever let an upstream queue fail silently. When downstream persistent stores get overwhelmed, your ingestion edge must signal backpressure or shed non-critical load using token bucket algorithms.\n\n### 3. Key Takeaways\n- Design for failure from day one.\n- Keep metrics actionable and correlated across request IDs.",
+      "title": "Deep Dive into Spring Boot REST APIs for Beginners",
+      "slug": "deep-dive-into-spring-boot-rest-apis",
+      "coverImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000",
+      "excerpt": "My journey building a Portfolio Management system and structuring clean CRUD API endpoints in Java.",
+      "body": "Building backend systems requires structured APIs. In this post, I write about constructing REST endpoints with Spring Boot, managing H2 in-memory databases, and connecting them to frontends.\n\n### 1. REST Endpoint Structure\nUsing Spring Web, it's straightforward to define controllers that parse JSON requests. Ensuring we return correct HTTP status codes (201 for Created, 200 for OK, 404 for Not Found) is crucial for standard API clients.\n\n### 2. In-Memory Persistence\nUsing H2 makes rapid local testing painless. Combined with Spring Data JPA, schema creation and database queries require minimal configuration, allowing you to focus on logic first.",
       "tags": [
-        "Distributed Systems",
-        "Architecture",
-        "Performance"
+        "Spring Boot",
+        "Java",
+        "REST APIs",
+        "Backend"
       ],
       "status": "published",
-      "publishedAt": "2026-03-12",
-      "readTime": "6 min read",
-      "createdAt": "2026-03-12T00:00:00Z",
-      "updatedAt": "2026-03-12T00:00:00Z"
+      "publishedAt": "2026-06-15",
+      "readTime": "5 min read",
+      "createdAt": "2026-06-15T00:00:00Z",
+      "updatedAt": "2026-06-15T00:00:00Z"
     },
     {
       "id": "post-2",
-      "title": "The Ledger Pattern: Crafting Honest & Auditable State Machines",
-      "slug": "the-ledger-pattern-in-web-architecture",
-      "coverImage": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000",
-      "excerpt": "Why append-only data stores eliminate race conditions and simplify debugging across complex web applications.",
-      "body": "Traditional CRUD applications overwrite row state directly in relational tables. While simple, direct updates destroy history and make distributed debugging nearly impossible.\n\n### Event Sourcing & Append-Only Logs\nBy storing state changes as an immutable sequence of facts, we achieve:\n1. Complete, unforgeable audit trail.\n2. Time-travel debugging during incident response.\n3. Natural event broadcasting to secondary search and analytics indexes.",
+      "title": "Transitioning from Java to Go: A Student's Perspective",
+      "slug": "transitioning-from-java-to-go",
+      "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000",
+      "excerpt": "Exploring Go concurrency, simple syntax, and how it compares to standard Java OOP patterns.",
+      "body": "I started my backend journey in Java, but recently I've been exploring Go (Golang). Here are my initial findings regarding goroutines, pointers, structs, and why Go makes building microservices a breeze.\n\n### Concurrency and Speed\nWhile Java has strong thread support and enterprise backing, Go was designed from the ground up for concurrent operations with lightweight Goroutines.\n\n### Simplicity of Go\nGo does not have class-based inheritance, which simplifies object mapping. Using structs and composition allows you to build modular code without deep hierarchy structures.",
       "tags": [
-        "Web Architecture",
-        "Database",
-        "Design Patterns"
+        "Go",
+        "Golang",
+        "Java",
+        "Learning"
       ],
       "status": "published",
-      "publishedAt": "2026-01-28",
-      "readTime": "8 min read",
-      "createdAt": "2026-01-28T00:00:00Z",
-      "updatedAt": "2026-01-28T00:00:00Z"
+      "publishedAt": "2026-07-20",
+      "readTime": "6 min read",
+      "createdAt": "2026-07-20T00:00:00Z",
+      "updatedAt": "2026-07-20T00:00:00Z"
     }
   ],
   "testimonials": [
     {
       "id": "test-1",
-      "name": "Sarah Lin",
-      "role": "VP of Engineering",
-      "company": "Veloce Data",
+      "name": "Project Advisor",
+      "role": "Department of Computer Systems",
+      "company": "MUET Jamshoro",
       "photoUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200",
-      "quote": "Alex is one of those rare engineers who can dive into complex low-level concurrency bugs in the morning and lead architectural discussions with executive stakeholders in the afternoon. Truly exceptional technical execution.",
+      "quote": "Hunain shows great initiative as a Computer Systems Engineering student. He is eager to learn, takes feedback constructively, and builds clean software.",
       "rating": 5,
       "status": "visible",
       "order": 1
     },
     {
       "id": "test-2",
-      "name": "David Miller",
-      "role": "Principal Architect",
-      "company": "CloudScale Inc",
+      "name": "Tech Mentor",
+      "role": "Senior Developer Mentor",
+      "company": "Developer Community",
       "photoUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200",
-      "quote": "Alex single-handedly redesigned our core orchestration engine, cutting our cloud deployment pipeline times by more than half. High code quality, thorough documentation, and zero operational drama.",
+      "quote": "Working with Hunain on software concepts has been a pleasure. His problem-solving mindset and adaptability are exceptional for a student.",
       "rating": 5,
       "status": "visible",
       "order": 2
@@ -185,138 +249,188 @@
   "skills": [
     {
       "id": "sk-1",
-      "name": "TypeScript & JavaScript",
-      "category": "Frontend",
-      "proficiency": 5,
+      "name": "Java",
+      "category": "Backend",
+      "proficiency": 4,
       "icon": "code",
       "order": 1
     },
     {
       "id": "sk-2",
-      "name": "React 19 & Next.js",
-      "category": "Frontend",
-      "proficiency": 5,
-      "icon": "layout",
+      "name": "Go (Golang)",
+      "category": "Backend",
+      "proficiency": 3,
+      "icon": "cpu",
       "order": 2
     },
     {
       "id": "sk-3",
-      "name": "TailwindCSS v4",
-      "category": "Frontend",
-      "proficiency": 5,
-      "icon": "palette",
+      "name": "C++",
+      "category": "Backend",
+      "proficiency": 3,
+      "icon": "code",
       "order": 3
     },
     {
       "id": "sk-4",
-      "name": "Node.js & Express",
+      "name": "Spring Boot",
       "category": "Backend",
-      "proficiency": 5,
+      "proficiency": 4,
       "icon": "server",
       "order": 4
     },
     {
       "id": "sk-5",
-      "name": "Go (Golang)",
+      "name": "REST APIs & API Development",
       "category": "Backend",
       "proficiency": 4,
-      "icon": "cpu",
+      "icon": "activity",
       "order": 5
     },
     {
       "id": "sk-6",
-      "name": "PostgreSQL & ClickHouse",
-      "category": "Databases",
-      "proficiency": 5,
-      "icon": "database",
+      "name": "JavaScript",
+      "category": "Frontend",
+      "proficiency": 4,
+      "icon": "terminal",
       "order": 6
     },
     {
       "id": "sk-7",
-      "name": "Redis & Caching",
-      "category": "Databases",
-      "proficiency": 5,
-      "icon": "layers",
+      "name": "React & Next.js",
+      "category": "Frontend",
+      "proficiency": 4,
+      "icon": "layout",
       "order": 7
     },
     {
       "id": "sk-8",
-      "name": "Docker & Kubernetes",
-      "category": "Cloud & DevOps",
-      "proficiency": 4,
-      "icon": "box",
+      "name": "Vue.js",
+      "category": "Frontend",
+      "proficiency": 3,
+      "icon": "code",
       "order": 8
     },
     {
       "id": "sk-9",
-      "name": "Distributed Systems Design",
-      "category": "Architecture",
+      "name": "Tailwind CSS & Bootstrap",
+      "category": "Frontend",
       "proficiency": 5,
-      "icon": "network",
+      "icon": "palette",
       "order": 9
+    },
+    {
+      "id": "sk-10",
+      "name": "HTML & CSS",
+      "category": "Frontend",
+      "proficiency": 5,
+      "icon": "layout",
+      "order": 10
+    },
+    {
+      "id": "sk-11",
+      "name": "PostgreSQL & MySQL",
+      "category": "Databases",
+      "proficiency": 4,
+      "icon": "database",
+      "order": 11
+    },
+    {
+      "id": "sk-12",
+      "name": "SQLite & H2 Database",
+      "category": "Databases",
+      "proficiency": 4,
+      "icon": "database",
+      "order": 12
+    },
+    {
+      "id": "sk-13",
+      "name": "Neon PostgreSQL",
+      "category": "Databases",
+      "proficiency": 4,
+      "icon": "database",
+      "order": 13
+    },
+    {
+      "id": "sk-14",
+      "name": "Git & GitHub",
+      "category": "Cloud & DevOps",
+      "proficiency": 4,
+      "icon": "git-branch",
+      "order": 14
+    },
+    {
+      "id": "sk-15",
+      "name": "Linux (Ubuntu)",
+      "category": "Cloud & DevOps",
+      "proficiency": 3,
+      "icon": "terminal",
+      "order": 15
+    },
+    {
+      "id": "sk-16",
+      "name": "Docker (Beginner)",
+      "category": "Cloud & DevOps",
+      "proficiency": 2,
+      "icon": "box",
+      "order": 16
+    },
+    {
+      "id": "sk-17",
+      "name": "Object-Oriented Programming",
+      "category": "Architecture",
+      "proficiency": 4,
+      "icon": "layers",
+      "order": 17
+    },
+    {
+      "id": "sk-18",
+      "name": "Data Structures & Algorithms",
+      "category": "Architecture",
+      "proficiency": 4,
+      "icon": "git-merge",
+      "order": 18
+    },
+    {
+      "id": "sk-19",
+      "name": "MVC & Layered Architecture",
+      "category": "Architecture",
+      "proficiency": 4,
+      "icon": "package",
+      "order": 19
+    },
+    {
+      "id": "sk-20",
+      "name": "System Design (Learning)",
+      "category": "Architecture",
+      "proficiency": 3,
+      "icon": "network",
+      "order": 20
     }
   ],
   "experience": [
     {
       "id": "exp-1",
-      "company": "Veloce Data Corp",
-      "role": "Lead Systems Engineer",
-      "startDate": "2024-03",
+      "company": "Mehran University of Engineering & Technology (MUET)",
+      "role": "Computer Systems Engineering Student",
+      "startDate": "2022",
       "endDate": "Present",
-      "description": "Leading the distributed storage and ingestion team. Architected event streaming pipeline serving 100k+ events/sec across multi-region Kubernetes clusters.",
-      "location": "San Francisco, CA",
+      "description": "Focusing on Computer Systems Engineering fundamentals. Building desktop applications in Java, backend services with Spring Boot, and mastering modern software architecture, database design, and cloud systems.",
+      "location": "Jamshoro, Sindh, Pakistan",
       "order": 1
-    },
-    {
-      "id": "exp-2",
-      "company": "CloudScale Inc",
-      "role": "Senior Full Stack Engineer",
-      "startDate": "2022-01",
-      "endDate": "2024-02",
-      "description": "Developed developer-facing cloud management dashboard and automated IaC orchestration engines. Built real-time canvas tools and high-performance WebGL topology graphs.",
-      "location": "San Francisco, CA",
-      "order": 2
-    },
-    {
-      "id": "exp-3",
-      "company": "Apex Systems",
-      "role": "Software Engineer",
-      "startDate": "2019-06",
-      "endDate": "2021-12",
-      "description": "Built RESTful microservices, internal dev tools, and React dashboards. Reduced database bottleneck latency by rewriting query layer in PostgreSQL.",
-      "location": "Austin, TX",
-      "order": 3
     }
   ],
   "education": [
     {
       "id": "edu-1",
-      "institution": "Stanford University",
-      "degree": "Bachelor of Science (B.S.)",
-      "field": "Computer Science (Systems & Distributed Software)",
-      "startDate": "2015",
-      "endDate": "2019",
+      "institution": "Mehran University of Engineering & Technology (MUET)",
+      "degree": "Bachelor of Engineering (BE)",
+      "field": "Computer Systems Engineering",
+      "startDate": "2022",
+      "endDate": "2026",
       "order": 1
     }
   ],
-  "messages": [
-    {
-      "id": "msg-1",
-      "name": "Marcus Brody",
-      "email": "m.brody@venturetech.com",
-      "subject": "Inquiry regarding Lead Architect position",
-      "message": "Hi Alex, loved your article on High Availability Systems. We are looking for a Lead Engineer to head our cloud infrastructure team at VentureTech. Would love to connect!",
-      "isRead": false,
-      "createdAt": "2026-07-24T14:32:00Z"
-    }
-  ],
-  "mediaAssets": [
-    {
-      "id": "media-1",
-      "fileName": "system-architecture-diagram.png",
-      "fileUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
-      "fileType": "image/png",
-      "uploadedAt": "2026-07-01T10:00:00Z"
-    }
-  ]
+  "messages": [],
+  "mediaAssets": []
 }

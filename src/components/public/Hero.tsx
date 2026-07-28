@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowDownRight, Download, Mail, Terminal, FileText } from 'lucide-react';
 import { Profile } from '../../types';
-import { HeroWireframeCanvas } from '../3d/HeroWireframeCanvas';
 
 interface HeroProps {
   profile: Profile;
@@ -72,23 +71,31 @@ export const Hero: React.FC<HeroProps> = ({ profile, onOpenResumeModal }) => {
             {/* Metric / Stat Callout Bar */}
             <div className="pt-8 grid grid-cols-3 gap-4 border-t border-white/10 max-w-xl">
               <div>
-                <p className="font-display text-2xl sm:text-3xl font-medium text-white">8+ Yrs</p>
-                <p className="text-[10px] uppercase tracking-widest font-mono text-white/40">Systems Arch</p>
+                <p className="font-display text-2xl sm:text-3xl font-medium text-white">4+</p>
+                <p className="text-[10px] uppercase tracking-widest font-mono text-white/40">Core Projects</p>
               </div>
               <div>
-                <p className="font-display text-2xl sm:text-3xl font-medium text-white">100k+</p>
-                <p className="text-[10px] uppercase tracking-widest font-mono text-white/40">Events / Sec</p>
+                <p className="font-display text-2xl sm:text-3xl font-medium text-white">20+</p>
+                <p className="text-[10px] uppercase tracking-widest font-mono text-white/40">Technologies</p>
               </div>
               <div>
-                <p className="font-display text-2xl sm:text-3xl font-medium text-green-400">99.99%</p>
-                <p className="text-[10px] uppercase tracking-widest font-mono text-white/40">Uptime SLA</p>
+                <p className="font-display text-2xl sm:text-3xl font-medium text-green-400">Fast</p>
+                <p className="text-[10px] uppercase tracking-widest font-mono text-white/40">Learner</p>
               </div>
             </div>
           </div>
 
-          {/* Right Column: 3D Interactive Model Canvas */}
-          <div className="lg:col-span-5">
-            <HeroWireframeCanvas />
+          {/* Right Column: Profile Image from Admin Panel */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative group w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2 shadow-2xl">
+              {/* Subtle background glow */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <img
+                src={profile.photoUrl}
+                alt={profile.name}
+                className="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105"
+              />
+            </div>
           </div>
 
         </div>

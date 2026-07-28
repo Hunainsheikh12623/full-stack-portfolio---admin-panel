@@ -51,6 +51,12 @@ export default function App() {
     fetchPublicData();
   }, []);
 
+  useEffect(() => {
+    if (data?.profile?.seoDefaults?.title) {
+      document.title = data.profile.seoDefaults.title;
+    }
+  }, [data]);
+
   const handleLoginSuccess = (token: string) => {
     setAuthToken(token);
     localStorage.setItem('admin_token', token);

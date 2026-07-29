@@ -17,7 +17,6 @@ Instead of writing changes directly to static files or complex database tables, 
 ## 🌟 Key Features
 
 ### 💻 Public-Facing Portfolio
-- **3D Hero Wireframe**: Interactive, animated 3D canvas wireframe using Three.js/Canvas rendering.
 - **Projects Showcase**: Interactive grid with filtering, featuring deep modal details, client info, repo links, and gallery lists.
 - **Timeline Chronicles**: Tabbed, interactive timeline displaying professional experience and educational background.
 - **Skills Matrix**: Category-wise (Frontend, Backend, Cloud, Databases, Architecture) proficiency tracker.

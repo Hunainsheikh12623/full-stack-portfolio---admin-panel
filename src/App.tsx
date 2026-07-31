@@ -26,6 +26,24 @@ export default function App() {
   const [selectedProjectModal, setSelectedProjectModal] = useState<Project | null>(null);
   const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
+  // Prefer the resume uploaded via Admin Panel; fall back to preview modal.
+  const openResume = () => {
+    const url = data?.profile?.resumeUrl?.trim();
+    if (url) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      const fileName = url.split('/').pop()?.split('?')[0] || 'Resume.pdf';
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      return;
+    }
+    setResumeModalOpen(true);
+  };
+
   // Check URL path for /admin route
   useEffect(() => {
     if (window.location.pathname === '/admin' || window.location.hash === '#admin') {
@@ -107,7 +125,7 @@ export default function App() {
       <main className="flex-1">
         <Hero
           profile={data.profile}
-          onOpenResumeModal={() => setResumeModalOpen(true)}
+          onOpenResumeModal={openResume}
         />
 
         <FeaturedProjects
@@ -119,7 +137,7 @@ export default function App() {
           profile={data.profile}
           experience={data.experience}
           education={data.education}
-          onOpenResumeModal={() => setResumeModalOpen(true)}
+          onOpenResumeModal={openResume}
         />
 
         <SkillsSection skills={data.skills} />

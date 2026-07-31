@@ -378,6 +378,65 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ authToken, onLog
     reader.readAsDataURL(file);
   };
 
+  // Resume PDF upload → updates profile.resumeUrl via dedicated backend endpoint
+  const handleResumeUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async () => {
+      const dataUrl = reader.result as string;
+      try {
+        const res = await fetch('/api/admin/resume', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+          },
+          body: JSON.stringify({
+            fileName: file.name,
+            fileUrl: dataUrl,
+            fileType: file.type || 'application/pdf'
+          })
+        });
+        const json = await res.json();
+        if (!res.ok) throw new Error(json.error || 'Upload failed');
+        showToast('Resume uploaded successfully!');
+        fetchAdminData();
+      } catch (err: any) {
+        alert(err.message || 'Failed to upload resume.');
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
+  // Pull README.md from GitHub into project description
+  const handleFetchReadme = async () => {
+    if (!projectModal.item?.repoUrl) {
+      alert('Enter a GitHub repository URL first.');
+      return;
+    }
+    try {
+      const res = await fetch('/api/admin/projects/fetch-readme', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${authToken}`
+        },
+        body: JSON.stringify({ repoUrl: projectModal.item.repoUrl })
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Could not fetch README');
+      setProjectModal({
+        ...projectModal,
+        item: { ...projectModal.item, description: json.readme }
+      });
+      showToast('README imported into description!');
+    } catch (err: any) {
+      alert(err.message || 'Failed to fetch README.');
+    }
+  };
+
   const handleDeleteMedia = async (id: string) => {
     if (!confirm('Delete media asset?')) return;
     await fetch(`/api/admin/media/${id}`, {
@@ -672,6 +731,30 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ authToken, onLog
                     className="w-full px-4 py-2.5 bg-[#F7F5F0] border border-[#D8D4C9] rounded-xl text-sm focus:outline-none focus:border-[#3B5BFF]"
                   />
                 </div>
+              </div>
+
+              {/* Resume upload */}
+              <div className="pt-6 border-t border-[#D8D4C9] space-y-4">
+                <span className="mono-xs text-[#3B5BFF] font-bold block">RESUME / CV UPLOAD</span>
+                <p className="text-sm text-[#4A4F5A]">Upload a PDF resume. It is stored in Supabase Storage and linked as profile.resumeUrl for the public site download button.</p>
+                <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                  <label className="inline-flex items-center space-x-2 px-4 py-2.5 bg-[#3B5BFF] text-white rounded-xl text-xs font-mono cursor-pointer hover:opacity-90">
+                    <span>CHOOSE PDF FILE</span>
+                    <input type="file" accept=".pdf,.doc,.docx,application/pdf" className="hidden" onChange={handleResumeUpload} />
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Or paste an external resume URL"
+                    value={data.profile.resumeUrl || ''}
+                    onChange={(e) => setData({ ...data, profile: { ...data.profile, resumeUrl: e.target.value } })}
+                    className="flex-1 w-full px-4 py-2.5 bg-[#F7F5F0] border border-[#D8D4C9] rounded-xl text-xs font-mono focus:outline-none focus:border-[#3B5BFF]"
+                  />
+                </div>
+                {data.profile.resumeUrl && (
+                  <a href={data.profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-[#3B5BFF] underline break-all">
+                    Current resume: {data.profile.resumeUrl}
+                  </a>
+                )}
               </div>
 
               {/* Admin access is managed by Supabase Auth, not portfolio content. */}
@@ -1172,6 +1255,53 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ authToken, onLog
                 onChange={(e) => setProjectModal({ ...projectModal, item: { ...projectModal.item, results: e.target.value } })}
                 className="p-2.5 border rounded-xl text-sm"
               />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input
+                type="url"
+                placeholder="GitHub Repo URL (https://github.com/user/repo)"
+                value={projectModal.item?.repoUrl || ''}
+                onChange={(e) => setProjectModal({ ...projectModal, item: { ...projectModal.item, repoUrl: e.target.value } })}
+                className="p-2.5 border rounded-xl text-sm font-mono"
+              />
+              <input
+                type="url"
+                placeholder="Live Demo URL"
+                value={projectModal.item?.liveUrl || ''}
+                onChange={(e) => setProjectModal({ ...projectModal, item: { ...projectModal.item, liveUrl: e.target.value } })}
+                className="p-2.5 border rounded-xl text-sm font-mono"
+              />
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={handleFetchReadme}
+                className="px-3 py-1.5 border border-[#3B5BFF] text-[#3B5BFF] rounded-full text-xs font-mono hover:bg-[#3B5BFF]/10"
+              >
+                Import README from GitHub
+              </button>
+              <label className="px-3 py-1.5 border rounded-full text-xs font-mono cursor-pointer hover:bg-black/5">
+                Upload README.md file
+                <input
+                  type="file"
+                  accept=".md,text/markdown,text/plain"
+                  className="hidden"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (!file) return;
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                      setProjectModal({
+                        ...projectModal,
+                        item: { ...projectModal.item, description: String(reader.result || '') }
+                      });
+                      showToast('README file loaded into description');
+                    };
+                    reader.readAsText(file);
+                  }}
+                />
+              </label>
+              <span className="text-[10px] text-[#4A4F5A] font-mono">Description field accepts Markdown (README content)</span>
             </div>
             <div className="flex justify-end space-x-3 pt-4 border-t">
               <button type="button" onClick={() => setProjectModal({ open: false, item: null })} className="px-4 py-2 border rounded-full text-xs font-mono">Cancel</button>

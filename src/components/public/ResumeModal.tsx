@@ -21,8 +21,25 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
 }) => {
   if (!isOpen) return null;
 
+  const hasUploadedResume = Boolean(profile.resumeUrl && profile.resumeUrl.trim());
+
   const handleDownload = () => {
-    // Generate simple text CV export or redirect
+    // Prefer the resume file uploaded from the Admin Panel (profile.resumeUrl).
+    if (hasUploadedResume) {
+      const link = document.createElement('a');
+      link.href = profile.resumeUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      // Hint browsers to download; works for same-origin / storage URLs with Content-Disposition.
+      const fileName = profile.resumeUrl.split('/').pop()?.split('?')[0] || `${profile.name.replace(/\s+/g, '_')}_Resume.pdf`;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      return;
+    }
+
+    // Fallback only when no uploaded resume exists: generate a plain-text export.
     const element = document.createElement('a');
     const file = new Blob([
       `${profile.name.toUpperCase()} - RESUME\n`,
@@ -120,14 +137,16 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
 
         {/* Footer */}
         <div className="p-6 bg-[#0a0a0a] border-t border-white/10 flex items-center justify-between shrink-0">
-          <p className="text-[10px] uppercase tracking-widest font-mono text-white/40">FORMAT: TEXT / PDF COMPATIBLE</p>
+          <p className="text-[10px] uppercase tracking-widest font-mono text-white/40">
+            {hasUploadedResume ? 'FORMAT: YOUR UPLOADED RESUME FILE' : 'FORMAT: AUTO-GENERATED TEXT (NO UPLOADED RESUME)'}
+          </p>
           <div className="flex space-x-3">
             <button
               onClick={handleDownload}
               className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-sm bg-white text-black font-sans font-bold text-xs uppercase tracking-widest hover:bg-neutral-200 transition-colors"
             >
               <Download className="w-4 h-4 text-black" />
-              <span>DOWNLOAD RESUME FILE</span>
+              <span>{hasUploadedResume ? 'DOWNLOAD MY RESUME' : 'DOWNLOAD TEXT EXPORT'}</span>
             </button>
             <button
               onClick={onClose}

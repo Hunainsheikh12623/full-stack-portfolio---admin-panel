@@ -733,6 +733,79 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ authToken, onLog
                 </div>
               </div>
 
+              {/* Social / professional links → public Contact section buttons */}
+              <div className="pt-6 border-t border-[#D8D4C9] space-y-4">
+                <span className="mono-xs text-[#3B5BFF] font-bold block">SOCIAL &amp; PROFESSIONAL LINKS</span>
+                <p className="text-sm text-[#4A4F5A]">
+                  These URLs power the GitHub, LinkedIn, and Email buttons on the public Contact section (INDEX 06).
+                </p>
+                <div className="grid grid-cols-1 gap-4">
+                  <div>
+                    <label className="mono-xs text-[#4A4F5A] block mb-2">GITHUB URL</label>
+                    <input
+                      type="url"
+                      placeholder="https://github.com/your-username"
+                      value={data.profile.socialLinks?.find((l) => l.platform.toLowerCase() === 'github')?.url || ''}
+                      onChange={(e) => {
+                        const url = e.target.value;
+                        const links = [...(data.profile.socialLinks || [])];
+                        const idx = links.findIndex((l) => l.platform.toLowerCase() === 'github');
+                        if (idx >= 0) links[idx] = { ...links[idx], url };
+                        else links.push({ platform: 'GitHub', url, icon: 'github' });
+                        setData({ ...data, profile: { ...data.profile, socialLinks: links } });
+                      }}
+                      className="w-full px-4 py-2.5 bg-[#F7F5F0] border border-[#D8D4C9] rounded-xl text-sm font-mono focus:outline-none focus:border-[#3B5BFF]"
+                    />
+                  </div>
+                  <div>
+                    <label className="mono-xs text-[#4A4F5A] block mb-2">LINKEDIN URL</label>
+                    <input
+                      type="url"
+                      placeholder="https://linkedin.com/in/your-profile"
+                      value={data.profile.socialLinks?.find((l) => l.platform.toLowerCase() === 'linkedin')?.url || ''}
+                      onChange={(e) => {
+                        const url = e.target.value;
+                        const links = [...(data.profile.socialLinks || [])];
+                        const idx = links.findIndex((l) => l.platform.toLowerCase() === 'linkedin');
+                        if (idx >= 0) links[idx] = { ...links[idx], url };
+                        else links.push({ platform: 'LinkedIn', url, icon: 'linkedin' });
+                        setData({ ...data, profile: { ...data.profile, socialLinks: links } });
+                      }}
+                      className="w-full px-4 py-2.5 bg-[#F7F5F0] border border-[#D8D4C9] rounded-xl text-sm font-mono focus:outline-none focus:border-[#3B5BFF]"
+                    />
+                  </div>
+                  <div>
+                    <label className="mono-xs text-[#4A4F5A] block mb-2">EMAIL / GMAIL LINK</label>
+                    <input
+                      type="text"
+                      placeholder="mailto:you@gmail.com"
+                      value={
+                        data.profile.socialLinks?.find((l) => {
+                          const p = l.platform.toLowerCase();
+                          return p === 'email' || p === 'gmail' || p === 'mail';
+                        })?.url || (data.profile.email ? `mailto:${data.profile.email}` : '')
+                      }
+                      onChange={(e) => {
+                        let url = e.target.value.trim();
+                        if (url && !url.startsWith('mailto:') && url.includes('@') && !url.startsWith('http')) {
+                          url = `mailto:${url}`;
+                        }
+                        const links = [...(data.profile.socialLinks || [])];
+                        const idx = links.findIndex((l) => {
+                          const p = l.platform.toLowerCase();
+                          return p === 'email' || p === 'gmail' || p === 'mail';
+                        });
+                        if (idx >= 0) links[idx] = { ...links[idx], url, platform: 'Email' };
+                        else links.push({ platform: 'Email', url, icon: 'mail' });
+                        setData({ ...data, profile: { ...data.profile, socialLinks: links } });
+                      }}
+                      className="w-full px-4 py-2.5 bg-[#F7F5F0] border border-[#D8D4C9] rounded-xl text-sm font-mono focus:outline-none focus:border-[#3B5BFF]"
+                    />
+                    <p className="text-[10px] text-[#4A4F5A] mt-1 font-mono">Use mailto:you@gmail.com or just you@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+
               {/* Resume upload */}
               <div className="pt-6 border-t border-[#D8D4C9] space-y-4">
                 <span className="mono-xs text-[#3B5BFF] font-bold block">RESUME / CV UPLOAD</span>

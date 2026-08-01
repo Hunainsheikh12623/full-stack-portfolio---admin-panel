@@ -1517,6 +1517,24 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ authToken, onLog
               onChange={(e) => setEduModal({ ...eduModal, item: { ...eduModal.item, field: e.target.value } })}
               className="w-full p-2.5 border rounded-xl text-sm"
             />
+            <div className="grid grid-cols-2 gap-2">
+              <input
+                type="text"
+                required
+                placeholder="Start Year (e.g. 2018)"
+                value={eduModal.item?.startDate || ''}
+                onChange={(e) => setEduModal({ ...eduModal, item: { ...eduModal.item, startDate: e.target.value } })}
+                className="p-2.5 border rounded-xl text-sm"
+              />
+              <input
+                type="text"
+                required
+                placeholder="End Year (e.g. 2022 or Present)"
+                value={eduModal.item?.endDate || ''}
+                onChange={(e) => setEduModal({ ...eduModal, item: { ...eduModal.item, endDate: e.target.value } })}
+                className="p-2.5 border rounded-xl text-sm"
+              />
+            </div>
             <div className="flex justify-end space-x-2">
               <button type="button" onClick={() => setEduModal({ open: false, item: null })} className="px-3 py-1.5 border rounded-full text-xs">Cancel</button>
               <button type="submit" className="px-4 py-1.5 bg-[#3B5BFF] text-white rounded-full text-xs">Save</button>
